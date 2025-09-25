@@ -11,13 +11,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
     
-    // Find books by title (case insensitive)
+   
     List<Book> findByTitleContainingIgnoreCase(String title);
     
-    // Find books by author (case insensitive)
+   
     List<Book> findByAuthorContainingIgnoreCase(String author);
     
-    // Find books by title or author (case insensitive)
     @Query("SELECT b FROM Book b WHERE " +
            "LOWER(b.title) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
            "LOWER(b.author) LIKE LOWER(CONCAT('%', :keyword, '%'))")

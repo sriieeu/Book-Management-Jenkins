@@ -27,7 +27,6 @@ public class Book {
     @Column(nullable = false)
     private String author;
     
-    // Constructors
     public Book() {}
     
     public Book(String title, String author) {
@@ -35,7 +34,7 @@ public class Book {
         this.author = author;
     }
     
-    // Getters and Setters
+    
     public Long getId() {
         return id;
     }
